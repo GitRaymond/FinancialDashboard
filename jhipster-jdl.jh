@@ -1,0 +1,66 @@
+entity TransactionIng {
+	date Integer required,
+    name String required,
+    myBankAccount String required,
+    contraBankAccount String,
+    code String required,
+    sign Sign required,
+    amount Double required,
+    mutation String required,
+    description Blob
+}
+
+enum Sign {
+	PLUS, MINUS
+}
+
+entity Vendor {
+	name String,
+}
+
+entity BankAccount {
+	name String,
+    bank String,
+    iban String,
+    goal String
+}
+
+entity ReportingCategory {
+	name String,
+}
+
+entity Tag {
+	name String
+}
+
+entity Budget {
+	year Integer,
+    month Integer,
+    amount Double,
+}
+
+entity SplitTransaction {
+	splitName String,
+    amount Double,
+    sign Sign,
+}
+
+relationship ManyToMany {
+	TransactionIng{tag} to Tag{transactionIng}
+}
+
+relationship ManyToOne {
+	TransactionIng{vendor} to Vendor{transactionIng}
+	TransactionIng{bankAccount} to BankAccount{transactionIng}
+    TransactionIng{reportingCategory} to ReportingCategory{transactionIng}
+    Budget{reportingCategory} to ReportingCategory{budget}
+    SplitTransaction{transactionIng} to  TransactionIng{splitTransaction}
+}
+
+paginate TransactionIng with infinite-scroll
+
+dto * with mapstruct
+
+service all with serviceImpl
+
+

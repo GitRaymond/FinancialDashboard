@@ -5,6 +5,16 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114757_added_entity_TransactionIng.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114758_added_entity_Vendor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114759_added_entity_BankAccount.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114800_added_entity_ReportingCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114801_added_entity_Tag.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114802_added_entity_Budget.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114803_added_entity_SplitTransaction.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180706114757_added_entity_constraints_TransactionIng.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114802_added_entity_constraints_Budget.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180706114803_added_entity_constraints_SplitTransaction.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

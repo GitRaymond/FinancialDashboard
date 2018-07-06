@@ -1,0 +1,38 @@
+{
+    "name": "BankAccount",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bank",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "iban",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "goal",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transactionIng",
+            "otherEntityName": "transactionIng",
+            "otherEntityRelationshipName": "bankAccount"
+        }
+    ],
+    "changelogDate": "20180706114759",
+    "entityTableName": "bank_account",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

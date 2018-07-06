@@ -1,0 +1,26 @@
+{
+    "name": "Vendor",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transactionIng",
+            "otherEntityName": "transactionIng",
+            "otherEntityRelationshipName": "vendor"
+        }
+    ],
+    "changelogDate": "20180706114758",
+    "entityTableName": "vendor",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

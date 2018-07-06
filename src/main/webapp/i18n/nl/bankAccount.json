@@ -1,0 +1,26 @@
+
+{
+    "financialdashboardApp": {
+        "bankAccount" : {
+            "home": {
+                "title": "Bank Accounts",
+                "createLabel": "Maak een nieuwe Bank Account",
+                "createOrEditLabel": "Maak of wijzig een Bank Account"
+            },
+            "created": "A new Bank Account is created with identifier {{ param }}",
+            "updated": "A Bank Account is updated with identifier {{ param }}",
+            "deleted": "A Bank Account is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Bank Account {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Bank Account"
+            },
+            "name": "Name",
+            "bank": "Bank",
+            "iban": "Iban",
+            "goal": "Goal",
+            "transactionIng": "Transaction Ing"
+        }
+    }
+}

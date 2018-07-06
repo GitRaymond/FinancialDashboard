@@ -38,6 +38,20 @@ public class CacheConfiguration {
             cm.createCache(com.raymond.financialdashboard.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.raymond.financialdashboard.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.raymond.financialdashboard.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.TransactionIng.class.getName(), jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.TransactionIng.class.getName() + ".tags", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.TransactionIng.class.getName() + ".splitTransactions", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.Vendor.class.getName(), jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.Vendor.class.getName() + ".transactionIngs", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.BankAccount.class.getName(), jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.BankAccount.class.getName() + ".transactionIngs", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.ReportingCategory.class.getName(), jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.ReportingCategory.class.getName() + ".transactionIngs", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.ReportingCategory.class.getName() + ".budgets", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.Tag.class.getName(), jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.Tag.class.getName() + ".transactionIngs", jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.Budget.class.getName(), jcacheConfiguration);
+            cm.createCache(com.raymond.financialdashboard.domain.SplitTransaction.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

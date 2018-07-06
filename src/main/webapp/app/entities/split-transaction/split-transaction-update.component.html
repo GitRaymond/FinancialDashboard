@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-split-transaction-heading" jhiTranslate="financialdashboardApp.splitTransaction.home.createOrEditLabel">Create or edit a Split Transaction</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!splitTransaction.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="splitTransaction.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.splitTransaction.splitName" for="field_splitName">Split Name</label>
+                    <input type="text" class="form-control" name="splitName" id="field_splitName"
+                        [(ngModel)]="splitTransaction.splitName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.splitTransaction.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="splitTransaction.amount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.splitTransaction.sign" for="field_sign">Sign</label>
+                    <select class="form-control" name="sign" [(ngModel)]="splitTransaction.sign" id="field_sign" >
+                        <option value="PLUS">{{'financialdashboardApp.Sign.PLUS' | translate}}</option>
+                        <option value="MINUS">{{'financialdashboardApp.Sign.MINUS' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.splitTransaction.transactionIng" for="field_transactionIng">Transaction Ing</label>
+                    <select class="form-control" id="field_transactionIng" name="transactionIng" [(ngModel)]="splitTransaction.transactionIngId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transactionIngOption.id" *ngFor="let transactionIngOption of transactionings; trackBy: trackTransactionIngById">{{transactionIngOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

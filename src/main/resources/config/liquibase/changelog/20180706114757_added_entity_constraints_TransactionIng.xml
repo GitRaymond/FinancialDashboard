@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TransactionIng.
+    -->
+    <changeSet id="20180706114757-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="vendor_id"
+                                 baseTableName="transaction_ing"
+                                 constraintName="fk_transaction_ing_vendor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vendor"/>
+
+        <addForeignKeyConstraint baseColumnNames="bank_account_id"
+                                 baseTableName="transaction_ing"
+                                 constraintName="fk_transaction_ing_bank_account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bank_account"/>
+
+        <addForeignKeyConstraint baseColumnNames="reporting_category_id"
+                                 baseTableName="transaction_ing"
+                                 constraintName="fk_transaction_ing_reporting_category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reporting_category"/>
+
+        <addForeignKeyConstraint baseColumnNames="transaction_ings_id"
+                                 baseTableName="transaction_ing_tag"
+                                 constraintName="fk_transaction_ing_tag_transaction_ings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="transaction_ing"/>
+        <addForeignKeyConstraint baseColumnNames="tags_id"
+                                 baseTableName="transaction_ing_tag"
+                                 constraintName="fk_transaction_ing_tag_tags_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+        
+    </changeSet>
+</databaseChangeLog>

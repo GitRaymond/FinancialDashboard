@@ -1,0 +1,161 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-transaction-ing-heading" jhiTranslate="financialdashboardApp.transactionIng.home.createOrEditLabel">Create or edit a Transaction Ing</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!transactionIng.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="transactionIng.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.date" for="field_date">Date</label>
+                    <input type="number" class="form-control" name="date" id="field_date"
+                        [(ngModel)]="transactionIng.date" required/>
+                    <div [hidden]="!(editForm.controls.date?.dirty && editForm.controls.date?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.date?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.date?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="transactionIng.name" required/>
+                    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.myBankAccount" for="field_myBankAccount">My Bank Account</label>
+                    <input type="text" class="form-control" name="myBankAccount" id="field_myBankAccount"
+                        [(ngModel)]="transactionIng.myBankAccount" required/>
+                    <div [hidden]="!(editForm.controls.myBankAccount?.dirty && editForm.controls.myBankAccount?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.myBankAccount?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.contraBankAccount" for="field_contraBankAccount">Contra Bank Account</label>
+                    <input type="text" class="form-control" name="contraBankAccount" id="field_contraBankAccount"
+                        [(ngModel)]="transactionIng.contraBankAccount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                        [(ngModel)]="transactionIng.code" required/>
+                    <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.sign" for="field_sign">Sign</label>
+                    <select class="form-control" name="sign" [(ngModel)]="transactionIng.sign" id="field_sign"  required>
+                        <option value="PLUS">{{'financialdashboardApp.Sign.PLUS' | translate}}</option>
+                        <option value="MINUS">{{'financialdashboardApp.Sign.MINUS' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.sign?.dirty && editForm.controls.sign?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sign?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="transactionIng.amount" required/>
+                    <div [hidden]="!(editForm.controls.amount?.dirty && editForm.controls.amount?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.amount?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.amount?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.mutation" for="field_mutation">Mutation</label>
+                    <input type="text" class="form-control" name="mutation" id="field_mutation"
+                        [(ngModel)]="transactionIng.mutation" required/>
+                    <div [hidden]="!(editForm.controls.mutation?.dirty && editForm.controls.mutation?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.mutation?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.description" for="field_description">Description</label>
+                    <div>
+                        <div *ngIf="transactionIng.description" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(transactionIng.descriptionContentType, transactionIng.description)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{transactionIng.descriptionContentType}}, {{byteSize(transactionIng.description)}}</span>
+                            <button type="button" (click)="transactionIng.description=null;transactionIng.descriptionContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_description" (change)="setFileData($event, transactionIng, 'description', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="transactionIng.description" />
+                    <input type="hidden" class="form-control" name="descriptionContentType" id="field_descriptionContentType"
+                        [(ngModel)]="transactionIng.descriptionContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.vendor" for="field_vendor">Vendor</label>
+                    <select class="form-control" id="field_vendor" name="vendor" [(ngModel)]="transactionIng.vendorId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vendorOption.id" *ngFor="let vendorOption of vendors; trackBy: trackVendorById">{{vendorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.bankAccount" for="field_bankAccount">Bank Account</label>
+                    <select class="form-control" id="field_bankAccount" name="bankAccount" [(ngModel)]="transactionIng.bankAccountId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="bankAccountOption.id" *ngFor="let bankAccountOption of bankaccounts; trackBy: trackBankAccountById">{{bankAccountOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.reportingCategory" for="field_reportingCategory">Reporting Category</label>
+                    <select class="form-control" id="field_reportingCategory" name="reportingCategory" [(ngModel)]="transactionIng.reportingCategoryId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="reportingCategoryOption.id" *ngFor="let reportingCategoryOption of reportingcategories; trackBy: trackReportingCategoryById">{{reportingCategoryOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="financialdashboardApp.transactionIng.tag" for="field_tag">Tag</label>
+                    <select class="form-control" id="field_tag" multiple name="tag" [(ngModel)]="transactionIng.tags">
+                        <option [ngValue]="getSelected(transactionIng.tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+
+{
+    "financialdashboardApp": {
+        "splitTransaction" : {
+            "home": {
+                "title": "Split Transactions",
+                "createLabel": "Maak een nieuwe Split Transaction",
+                "createOrEditLabel": "Maak of wijzig een Split Transaction"
+            },
+            "created": "A new Split Transaction is created with identifier {{ param }}",
+            "updated": "A Split Transaction is updated with identifier {{ param }}",
+            "deleted": "A Split Transaction is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Split Transaction {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Split Transaction"
+            },
+            "splitName": "Split Name",
+            "amount": "Amount",
+            "sign": "Sign",
+            "transactionIng": "Transaction Ing"
+        }
+    }
+}

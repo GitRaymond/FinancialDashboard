@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionIng">
+            <h2><span jhiTranslate="financialdashboardApp.transactionIng.detail.title">Transaction Ing</span> {{transactionIng.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.date">Date</span></dt>
+                <dd>
+                    <span>{{transactionIng.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.name">Name</span></dt>
+                <dd>
+                    <span>{{transactionIng.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.myBankAccount">My Bank Account</span></dt>
+                <dd>
+                    <span>{{transactionIng.myBankAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.contraBankAccount">Contra Bank Account</span></dt>
+                <dd>
+                    <span>{{transactionIng.contraBankAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.code">Code</span></dt>
+                <dd>
+                    <span>{{transactionIng.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.sign">Sign</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'financialdashboardApp.Sign.' + transactionIng.sign}}">{{transactionIng.sign}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.amount">Amount</span></dt>
+                <dd>
+                    <span>{{transactionIng.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.mutation">Mutation</span></dt>
+                <dd>
+                    <span>{{transactionIng.mutation}}</span>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.description">Description</span></dt>
+                <dd>
+                    <div *ngIf="transactionIng.description">
+                        <a (click)="openFile(transactionIng.descriptionContentType, transactionIng.description)" jhiTranslate="entity.action.open">open</a>
+                        {{transactionIng.descriptionContentType}}, {{byteSize(transactionIng.description)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.vendor">Vendor</span></dt>
+                <dd>
+                    <div *ngIf="transactionIng.vendorId">
+                        <a [routerLink]="['/vendor', transactionIng.vendorId, 'view']">{{transactionIng.vendorId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.bankAccount">Bank Account</span></dt>
+                <dd>
+                    <div *ngIf="transactionIng.bankAccountId">
+                        <a [routerLink]="['/bank-account', transactionIng.bankAccountId, 'view']">{{transactionIng.bankAccountId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.reportingCategory">Reporting Category</span></dt>
+                <dd>
+                    <div *ngIf="transactionIng.reportingCategoryId">
+                        <a [routerLink]="['/reporting-category', transactionIng.reportingCategoryId, 'view']">{{transactionIng.reportingCategoryId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="financialdashboardApp.transactionIng.tag">Tag</span></dt>
+                <dd>
+                    <span *ngFor="let tag of transactionIng.tags; let last = last">
+                        <a [routerLink]="['/tag', tag?.id, 'view' ]">{{tag.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-ing', transactionIng.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

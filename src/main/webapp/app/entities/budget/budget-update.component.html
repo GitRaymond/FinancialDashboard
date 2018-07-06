@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-budget-heading" jhiTranslate="financialdashboardApp.budget.home.createOrEditLabel">Create or edit a Budget</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!budget.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="budget.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.budget.year" for="field_year">Year</label>
+                    <input type="number" class="form-control" name="year" id="field_year"
+                        [(ngModel)]="budget.year" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.budget.month" for="field_month">Month</label>
+                    <input type="number" class="form-control" name="month" id="field_month"
+                        [(ngModel)]="budget.month" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.budget.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="budget.amount" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="financialdashboardApp.budget.reportingCategory" for="field_reportingCategory">Reporting Category</label>
+                    <select class="form-control" id="field_reportingCategory" name="reportingCategory" [(ngModel)]="budget.reportingCategoryId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="reportingCategoryOption.id" *ngFor="let reportingCategoryOption of reportingcategories; trackBy: trackReportingCategoryById">{{reportingCategoryOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

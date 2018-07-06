@@ -1,0 +1,35 @@
+{
+    "name": "SplitTransaction",
+    "fields": [
+        {
+            "fieldName": "splitName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "sign",
+            "fieldType": "Sign",
+            "fieldValues": "PLUS,MINUS"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "transactionIng",
+            "otherEntityName": "transactionIng",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180706114803",
+    "entityTableName": "split_transaction",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,24 @@
+
+{
+    "financialdashboardApp": {
+        "reportingCategory" : {
+            "home": {
+                "title": "Reporting Categories",
+                "createLabel": "Maak een nieuwe Reporting Category",
+                "createOrEditLabel": "Maak of wijzig een Reporting Category"
+            },
+            "created": "A new Reporting Category is created with identifier {{ param }}",
+            "updated": "A Reporting Category is updated with identifier {{ param }}",
+            "deleted": "A Reporting Category is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Reporting Category {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Reporting Category"
+            },
+            "name": "Name",
+            "transactionIng": "Transaction Ing",
+            "budget": "Budget"
+        }
+    }
+}

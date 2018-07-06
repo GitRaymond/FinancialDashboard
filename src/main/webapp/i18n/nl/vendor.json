@@ -1,0 +1,23 @@
+
+{
+    "financialdashboardApp": {
+        "vendor" : {
+            "home": {
+                "title": "Vendors",
+                "createLabel": "Maak een nieuwe Vendor",
+                "createOrEditLabel": "Maak of wijzig een Vendor"
+            },
+            "created": "A new Vendor is created with identifier {{ param }}",
+            "updated": "A Vendor is updated with identifier {{ param }}",
+            "deleted": "A Vendor is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Vendor {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Vendor"
+            },
+            "name": "Name",
+            "transactionIng": "Transaction Ing"
+        }
+    }
+}

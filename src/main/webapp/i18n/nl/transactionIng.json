@@ -1,0 +1,35 @@
+
+{
+    "financialdashboardApp": {
+        "transactionIng" : {
+            "home": {
+                "title": "Transaction Ings",
+                "createLabel": "Maak een nieuwe Transaction Ing",
+                "createOrEditLabel": "Maak of wijzig een Transaction Ing"
+            },
+            "created": "A new Transaction Ing is created with identifier {{ param }}",
+            "updated": "A Transaction Ing is updated with identifier {{ param }}",
+            "deleted": "A Transaction Ing is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Bent u zeker dat u Transaction Ing {{ id }} wilt verwijderen?"
+            },
+            "detail": {
+                "title": "Transaction Ing"
+            },
+            "date": "Date",
+            "name": "Name",
+            "myBankAccount": "My Bank Account",
+            "contraBankAccount": "Contra Bank Account",
+            "code": "Code",
+            "sign": "Sign",
+            "amount": "Amount",
+            "mutation": "Mutation",
+            "description": "Description",
+            "vendor": "Vendor",
+            "bankAccount": "Bank Account",
+            "reportingCategory": "Reporting Category",
+            "tag": "Tag",
+            "splitTransaction": "Split Transaction"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "financialdashboardApp": {
+        "Sign" : {
+            "null": "",
+            "PLUS": "PLUS",
+            "MINUS": "MINUS"
+        }
+    }
+}

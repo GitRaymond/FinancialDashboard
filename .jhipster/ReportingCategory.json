@@ -1,0 +1,32 @@
+{
+    "name": "ReportingCategory",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "transactionIng",
+            "otherEntityName": "transactionIng",
+            "otherEntityRelationshipName": "reportingCategory"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "budget",
+            "otherEntityName": "budget",
+            "otherEntityRelationshipName": "reportingCategory"
+        }
+    ],
+    "changelogDate": "20180706114800",
+    "entityTableName": "reporting_category",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
