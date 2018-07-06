@@ -58,7 +58,7 @@
         {
             "fieldName": "description",
             "fieldType": "byte[]",
-            "fieldTypeBlobContent": "any"
+            "fieldTypeBlobContent": "text"
         }
     ],
     "relationships": [

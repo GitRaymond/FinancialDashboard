@@ -39,8 +39,7 @@ public class TransactionIngDTO implements Serializable {
     private String mutation;
 
     @Lob
-    private byte[] description;
-    private String descriptionContentType;
+    private String description;
 
     private Long vendorId;
 
@@ -122,20 +121,12 @@ public class TransactionIngDTO implements Serializable {
         this.mutation = mutation;
     }
 
-    public byte[] getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(byte[] description) {
+    public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getDescriptionContentType() {
-        return descriptionContentType;
-    }
-
-    public void setDescriptionContentType(String descriptionContentType) {
-        this.descriptionContentType = descriptionContentType;
     }
 
     public Long getVendorId() {

@@ -7,7 +7,7 @@ entity TransactionIng {
     sign Sign required,
     amount Double required,
     mutation String required,
-    description Blob
+    description TextBlob
 }
 
 enum Sign {

@@ -16,7 +16,6 @@ export interface ITransactionIng {
     sign?: Sign;
     amount?: number;
     mutation?: string;
-    descriptionContentType?: string;
     description?: any;
     vendorId?: number;
     bankAccountId?: number;
@@ -36,7 +35,6 @@ export class TransactionIng implements ITransactionIng {
         public sign?: Sign,
         public amount?: number,
         public mutation?: string,
-        public descriptionContentType?: string,
         public description?: any,
         public vendorId?: number,
         public bankAccountId?: number,

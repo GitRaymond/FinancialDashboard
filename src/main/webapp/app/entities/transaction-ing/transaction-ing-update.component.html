@@ -103,21 +103,8 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.description" for="field_description">Description</label>
-                    <div>
-                        <div *ngIf="transactionIng.description" class="form-text text-danger clearfix">
-                            <a class="pull-left" (click)="openFile(transactionIng.descriptionContentType, transactionIng.description)" jhiTranslate="entity.action.open">open</a><br>
-                            <span class="pull-left">{{transactionIng.descriptionContentType}}, {{byteSize(transactionIng.description)}}</span>
-                            <button type="button" (click)="transactionIng.description=null;transactionIng.descriptionContentType=null;"
-                                    class="btn btn-secondary btn-xs pull-right">
-                                <fa-icon [icon]="'times'"></fa-icon>
-                            </button>
-                        </div>
-                        <input type="file" id="file_description" (change)="setFileData($event, transactionIng, 'description', false)" jhiTranslate="entity.action.addblob"/>
-                    </div>
-                    <input type="hidden" class="form-control" name="description" id="field_description"
-                        [(ngModel)]="transactionIng.description" />
-                    <input type="hidden" class="form-control" name="descriptionContentType" id="field_descriptionContentType"
-                        [(ngModel)]="transactionIng.descriptionContentType" />
+                    <textarea class="form-control" name="description" id="field_description"
+                        [(ngModel)]="transactionIng.description" ></textarea>
                 </div>
 
                 <div class="form-group">

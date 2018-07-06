@@ -63,10 +63,7 @@ public class TransactionIng implements Serializable {
 
     @Lob
     @Column(name = "description")
-    private byte[] description;
-
-    @Column(name = "description_content_type")
-    private String descriptionContentType;
+    private String description;
 
     @ManyToOne
     @JsonIgnoreProperties("transactionIngs")
@@ -204,30 +201,17 @@ public class TransactionIng implements Serializable {
         this.mutation = mutation;
     }
 
-    public byte[] getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public TransactionIng description(byte[] description) {
+    public TransactionIng description(String description) {
         this.description = description;
         return this;
     }
 
-    public void setDescription(byte[] description) {
+    public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getDescriptionContentType() {
-        return descriptionContentType;
-    }
-
-    public TransactionIng descriptionContentType(String descriptionContentType) {
-        this.descriptionContentType = descriptionContentType;
-        return this;
-    }
-
-    public void setDescriptionContentType(String descriptionContentType) {
-        this.descriptionContentType = descriptionContentType;
     }
 
     public Vendor getVendor() {
@@ -353,7 +337,6 @@ public class TransactionIng implements Serializable {
             ", amount=" + getAmount() +
             ", mutation='" + getMutation() + "'" +
             ", description='" + getDescription() + "'" +
-            ", descriptionContentType='" + getDescriptionContentType() + "'" +
             "}";
     }
 }

@@ -39,10 +39,7 @@
                 </dd>
                 <dt><span jhiTranslate="financialdashboardApp.transactionIng.description">Description</span></dt>
                 <dd>
-                    <div *ngIf="transactionIng.description">
-                        <a (click)="openFile(transactionIng.descriptionContentType, transactionIng.description)" jhiTranslate="entity.action.open">open</a>
-                        {{transactionIng.descriptionContentType}}, {{byteSize(transactionIng.description)}}
-                    </div>
+                    <span>{{transactionIng.description}}</span>
                 </dd>
                 <dt><span jhiTranslate="financialdashboardApp.transactionIng.vendor">Vendor</span></dt>
                 <dd>

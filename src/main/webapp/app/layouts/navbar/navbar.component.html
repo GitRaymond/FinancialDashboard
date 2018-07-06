@@ -71,6 +71,12 @@
                             <span jhiTranslate="global.menu.entities.splitTransaction">Split Transaction</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="transaction-ing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.transactionIng">Transaction Ing</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>

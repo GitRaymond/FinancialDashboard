@@ -73,10 +73,8 @@ public class TransactionIngResourceIntTest {
     private static final String DEFAULT_MUTATION = "AAAAAAAAAA";
     private static final String UPDATED_MUTATION = "BBBBBBBBBB";
 
-    private static final byte[] DEFAULT_DESCRIPTION = TestUtil.createByteArray(1, "0");
-    private static final byte[] UPDATED_DESCRIPTION = TestUtil.createByteArray(2, "1");
-    private static final String DEFAULT_DESCRIPTION_CONTENT_TYPE = "image/jpg";
-    private static final String UPDATED_DESCRIPTION_CONTENT_TYPE = "image/png";
+    private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
     private TransactionIngRepository transactionIngRepository;
@@ -135,8 +133,7 @@ public class TransactionIngResourceIntTest {
             .sign(DEFAULT_SIGN)
             .amount(DEFAULT_AMOUNT)
             .mutation(DEFAULT_MUTATION)
-            .description(DEFAULT_DESCRIPTION)
-            .descriptionContentType(DEFAULT_DESCRIPTION_CONTENT_TYPE);
+            .description(DEFAULT_DESCRIPTION);
         return transactionIng;
     }
 
@@ -170,7 +167,6 @@ public class TransactionIngResourceIntTest {
         assertThat(testTransactionIng.getAmount()).isEqualTo(DEFAULT_AMOUNT);
         assertThat(testTransactionIng.getMutation()).isEqualTo(DEFAULT_MUTATION);
         assertThat(testTransactionIng.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
-        assertThat(testTransactionIng.getDescriptionContentType()).isEqualTo(DEFAULT_DESCRIPTION_CONTENT_TYPE);
     }
 
     @Test
@@ -345,8 +341,7 @@ public class TransactionIngResourceIntTest {
             .andExpect(jsonPath("$.[*].sign").value(hasItem(DEFAULT_SIGN.toString())))
             .andExpect(jsonPath("$.[*].amount").value(hasItem(DEFAULT_AMOUNT.doubleValue())))
             .andExpect(jsonPath("$.[*].mutation").value(hasItem(DEFAULT_MUTATION.toString())))
-            .andExpect(jsonPath("$.[*].descriptionContentType").value(hasItem(DEFAULT_DESCRIPTION_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].description").value(hasItem(Base64Utils.encodeToString(DEFAULT_DESCRIPTION))));
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
     
     public void getAllTransactionIngsWithEagerRelationshipsIsEnabled() throws Exception {
@@ -399,8 +394,7 @@ public class TransactionIngResourceIntTest {
             .andExpect(jsonPath("$.sign").value(DEFAULT_SIGN.toString()))
             .andExpect(jsonPath("$.amount").value(DEFAULT_AMOUNT.doubleValue()))
             .andExpect(jsonPath("$.mutation").value(DEFAULT_MUTATION.toString()))
-            .andExpect(jsonPath("$.descriptionContentType").value(DEFAULT_DESCRIPTION_CONTENT_TYPE))
-            .andExpect(jsonPath("$.description").value(Base64Utils.encodeToString(DEFAULT_DESCRIPTION)));
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));
     }
     @Test
     @Transactional
@@ -431,8 +425,7 @@ public class TransactionIngResourceIntTest {
             .sign(UPDATED_SIGN)
             .amount(UPDATED_AMOUNT)
             .mutation(UPDATED_MUTATION)
-            .description(UPDATED_DESCRIPTION)
-            .descriptionContentType(UPDATED_DESCRIPTION_CONTENT_TYPE);
+            .description(UPDATED_DESCRIPTION);
         TransactionIngDTO transactionIngDTO = transactionIngMapper.toDto(updatedTransactionIng);
 
         restTransactionIngMockMvc.perform(put("/api/transaction-ings")
@@ -453,7 +446,6 @@ public class TransactionIngResourceIntTest {
         assertThat(testTransactionIng.getAmount()).isEqualTo(UPDATED_AMOUNT);
         assertThat(testTransactionIng.getMutation()).isEqualTo(UPDATED_MUTATION);
         assertThat(testTransactionIng.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
-        assertThat(testTransactionIng.getDescriptionContentType()).isEqualTo(UPDATED_DESCRIPTION_CONTENT_TYPE);
     }
 
     @Test

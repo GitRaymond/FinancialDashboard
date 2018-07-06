@@ -54,10 +54,7 @@
                 <constraints nullable="false" />
             </column>
 
-            <column name="description" type="longblob">
-                <constraints nullable="true" />
-            </column>
-            <column name="description_content_type" type="varchar(255)">
+            <column name="description" type="clob">
                 <constraints nullable="true" />
             </column>
 

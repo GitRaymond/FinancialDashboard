@@ -41,10 +41,7 @@
                 <td jhiTranslate="{{'financialdashboardApp.Sign.' + transactionIng.sign}}">{{transactionIng.sign}}</td>
                 <td>{{transactionIng.amount}}</td>
                 <td>{{transactionIng.mutation}}</td>
-                <td>
-                    <a *ngIf="transactionIng.description" (click)="openFile(transactionIng.descriptionContentType, transactionIng.description)" jhiTranslate="entity.action.open">open</a>
-                    <span *ngIf="transactionIng.description">{{transactionIng.descriptionContentType}}, {{byteSize(transactionIng.description)}}</span>
-                </td>
+                <td>{{transactionIng.description}}</td>
                 <td>
                     <div *ngIf="transactionIng.vendorId">
                         <a [routerLink]="['../vendor', transactionIng.vendorId , 'view' ]" >{{transactionIng.vendorId}}</a>
