@@ -118,20 +118,20 @@
                     <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.bankAccount" for="field_bankAccount">Bank Account</label>
                     <select class="form-control" id="field_bankAccount" name="bankAccount" [(ngModel)]="transactionIng.bankAccountId" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="bankAccountOption.id" *ngFor="let bankAccountOption of bankaccounts; trackBy: trackBankAccountById">{{bankAccountOption.id}}</option>
+                        <option [ngValue]="bankAccountOption.id" *ngFor="let bankAccountOption of bankaccounts; trackBy: trackBankAccountById">{{bankAccountOption.iban}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="financialdashboardApp.transactionIng.reportingCategory" for="field_reportingCategory">Reporting Category</label>
                     <select class="form-control" id="field_reportingCategory" name="reportingCategory" [(ngModel)]="transactionIng.reportingCategoryId" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="reportingCategoryOption.id" *ngFor="let reportingCategoryOption of reportingcategories; trackBy: trackReportingCategoryById">{{reportingCategoryOption.id}}</option>
+                        <option [ngValue]="reportingCategoryOption.id" *ngFor="let reportingCategoryOption of reportingcategories; trackBy: trackReportingCategoryById">{{reportingCategoryOption.name}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label jhiTranslate="financialdashboardApp.transactionIng.tag" for="field_tag">Tag</label>
                     <select class="form-control" id="field_tag" multiple name="tag" [(ngModel)]="transactionIng.tags">
-                        <option [ngValue]="getSelected(transactionIng.tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.id}}</option>
+                        <option [ngValue]="getSelected(transactionIng.tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.name}}</option>
                     </select>
                 </div>
             </div>
